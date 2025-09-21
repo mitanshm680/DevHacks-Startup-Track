@@ -253,11 +253,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#F9F9F9',
   },
   registerButton: {
-    backgroundColor: '#65695A',
+    backgroundColor: '#000000',
     paddingVertical: 18,
     borderRadius: 16,
     marginBottom: 20,
-    shadowColor: '#65695A',
+    shadowColor: '#000000',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,
@@ -277,7 +277,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   loginBold: {
-    color: '#65695A',
+    color: '#000000',
     fontWeight: '600',
   },
   dropdownButton: {

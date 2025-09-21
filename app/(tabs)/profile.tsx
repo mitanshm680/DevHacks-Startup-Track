@@ -89,7 +89,7 @@ export default function ProfileScreen() {
     </View>
   );
 
-  const MenuItem = ({ icon: Icon, title, subtitle, onPress, color = '#65695A' }: { 
+  const MenuItem = ({ icon: Icon, title, subtitle, onPress, color = '#000000' }: { 
     icon: any, 
     title: string, 
     subtitle?: string, 
@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
     marginBottom: 25,
     marginHorizontal: 20,
     alignItems: 'center',
-    shadowColor: '#65695A',
+    shadowColor: '#000000',
     shadowOffset: { width: 0, height: 12 },
     shadowOpacity: 0.15,
     shadowRadius: 30,
@@ -253,7 +253,7 @@ const styles = StyleSheet.create({
   membershipBadge: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#65695A',
+    backgroundColor: '#000000',
     paddingHorizontal: 12,
     paddingVertical: 4,
     borderRadius: 20,
@@ -281,7 +281,7 @@ const styles = StyleSheet.create({
   },
   profileDorm: {
     fontSize: 14,
-    color: '#65695A',
+    color: '#000000',
     marginBottom: 20,
   },
   statsRow: {
@@ -298,7 +298,7 @@ const styles = StyleSheet.create({
   statNumber: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#65695A',
+    color: '#000000',
   },
   statLabel: {
     fontSize: 12,
@@ -311,7 +311,7 @@ const styles = StyleSheet.create({
   menuSectionTitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#65695A',
+    color: '#000000',
     marginBottom: 10,
     marginLeft: 5,
   },
@@ -323,7 +323,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    shadowColor: '#65695A',
+    shadowColor: '#000000',
     shadowOffset: { width: 0, height: 6 },
     shadowOpacity: 0.08,
     shadowRadius: 18,

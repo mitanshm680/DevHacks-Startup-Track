@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     borderColor: '#E0E0E0',
   },
   toggleText: {
-    color: '#65695A',
+    color: '#000000',
     fontSize: 14,
     fontWeight: '500',
   },
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#65695A',
+    color: '#000000',
     marginBottom: 12,
     textAlign: 'center',
   },

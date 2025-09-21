@@ -122,7 +122,7 @@ export default function MyListingsScreen() {
         </View>
         <View style={styles.listingActions}>
           <TouchableOpacity style={styles.actionButton}>
-            <Edit3 size={18} color="#65695A" />
+            <Edit3 size={18} color="#000000" />
             <Text style={styles.actionText}>Edit</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.actionButton}>
@@ -231,7 +231,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   activeFilterTab: {
-    backgroundColor: '#65695A',
+    backgroundColor: '#000000',
   },
   filterText: {
     fontSize: 14,
@@ -248,7 +248,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     borderRadius: 28,
     marginBottom: 20,
-    shadowColor: '#65695A',
+    shadowColor: '#000000',
     shadowOffset: { width: 0, height: 12 },
     shadowOpacity: 0.15,
     shadowRadius: 30,
@@ -298,7 +298,7 @@ const styles = StyleSheet.create({
   listingPrice: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#65695A',
+    color: '#000000',
     marginBottom: 4,
   },
   listingCategory: {
