@@ -253,7 +253,7 @@ const styles = StyleSheet.create({
     padding: 30,
     alignItems: 'center',
     elevation: 8,
-    shadowColor: '#FF6B35',
+    shadowColor: '#65695A',
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.15,
     shadowRadius: 20,
@@ -268,7 +268,7 @@ const styles = StyleSheet.create({
   pointsValue: {
     fontSize: 48,
     fontWeight: 'bold',
-    color: '#FF6B35',
+    color: '#65695A',
     marginBottom: 5,
   },
   pointsSubtitle: {
@@ -300,7 +300,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#FF6B35',
+    color: '#65695A',
     marginBottom: 15,
   },
   howItWorksContainer: {
@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     paddingVertical: 20,
     elevation: 2,
-    borderColor: '#FF6B35',
+    borderColor: '#65695A',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.05,
     shadowRadius: 4,
@@ -336,7 +336,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     borderRadius: 24,
     elevation: 6,
-    shadowColor: '#FF6B35',
+    shadowColor: '#65695A',
     shadowOffset: { width: 0, height: 6 },
     shadowOpacity: 0.1,
     shadowRadius: 15,
@@ -382,14 +382,14 @@ const styles = StyleSheet.create({
   giftCardPoints: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#FF6B35',
+    color: '#65695A',
     marginBottom: 8,
   },
   giftCardPointsDisabled: {
     color: '#CCCCCC',
   },
   redeemButton: {
-    backgroundColor: '#FF6B35',
+    backgroundColor: '#65695A',
     paddingHorizontal: 16,
     paddingVertical: 6,
     borderRadius: 16,
@@ -409,7 +409,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     borderRadius: 12,
     elevation: 2,
-    borderColor: '#FF6B35',
+    borderColor: '#65695A',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.05,
     shadowRadius: 4,

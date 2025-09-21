@@ -278,7 +278,7 @@ const styles = StyleSheet.create({
   benefitsTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#FF6B35',
+    color: '#65695A',
     marginBottom: 15,
   },
   benefitsContainer: {
@@ -318,7 +318,7 @@ const styles = StyleSheet.create({
   plansTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#FF6B35',
+    color: '#65695A',
     marginBottom: 15,
   },
   planCard: {
@@ -327,7 +327,7 @@ const styles = StyleSheet.create({
     padding: 25,
     marginBottom: 20,
     elevation: 8,
-    shadowColor: '#FF6B35',
+    shadowColor: '#65695A',
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.12,
     shadowRadius: 20,
@@ -339,7 +339,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFEF0',
   },
   selectedPlan: {
-    borderColor: '#FF6B35',
+    borderColor: '#65695A',
   },
   planHeader: {
     flexDirection: 'row',
@@ -369,7 +369,7 @@ const styles = StyleSheet.create({
   currentBadgeText: {
     fontSize: 10,
     fontWeight: 'bold',
-    color: '#FF6B35',
+    color: '#65695A',
   },
   priceContainer: {
     flexDirection: 'row',
@@ -379,7 +379,7 @@ const styles = StyleSheet.create({
   price: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: '#FF6B35',
+    color: '#65695A',
   },
   period: {
     fontSize: 16,
@@ -432,7 +432,7 @@ const styles = StyleSheet.create({
   faqTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#FF6B35',
+    color: '#65695A',
     marginBottom: 15,
   },
   faqItem: {

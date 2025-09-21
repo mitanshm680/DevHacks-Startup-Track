@@ -245,7 +245,7 @@ const styles = StyleSheet.create({
     borderRadius: 24,
     padding: 20,
     marginBottom: 16,
-    shadowColor: '#FF6B35',
+    shadowColor: '#65695A',
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.1,
     shadowRadius: 20,
@@ -299,7 +299,7 @@ const styles = StyleSheet.create({
   },
   userDorm: {
     fontSize: 12,
-    color: '#FF6B35',
+    color: '#65695A',
     marginTop: 2,
   },
   messageRight: {
@@ -333,7 +333,7 @@ const styles = StyleSheet.create({
   itemPrice: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#FF6B35',
+    color: '#65695A',
   },
   lastMessage: {
     fontSize: 14,
@@ -356,7 +356,7 @@ const styles = StyleSheet.create({
   emptyStateTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#FF6B35',
+    color: '#65695A',
     marginBottom: 10,
   },
   emptyStateText: {

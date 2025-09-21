@@ -71,7 +71,7 @@ export default function RegisterScreen() {
       <StatusBar style="dark" />
       
       <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
-        <ArrowLeft size={24} color="#FF6B35" />
+        <ArrowLeft size={24} color="#65695A" />
       </TouchableOpacity>
 
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
@@ -238,11 +238,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#F9F9F9',
   },
   registerButton: {
-    backgroundColor: '#FF6B35',
+    backgroundColor: '#65695A',
     paddingVertical: 18,
     borderRadius: 16,
     marginBottom: 20,
-    shadowColor: '#FF6B35',
+    shadowColor: '#65695A',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,
@@ -262,7 +262,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   loginBold: {
-    color: '#FF6B35',
+    color: '#65695A',
     fontWeight: '600',
   },
   dropdownButton: {

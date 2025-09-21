@@ -112,7 +112,7 @@ export default function HomeScreen() {
       <View style={styles.imageContainer}>
         <Image source={{ uri: item.image }} style={styles.cardImage} />
         <TouchableOpacity style={styles.favoriteButton}>
-          <Heart size={18} color="#FF6B35" fill="none" />
+          <Heart size={18} color="#65695A" fill="none" />
         </TouchableOpacity>
         {item.discount && (
           <View style={styles.discountBadge}>
@@ -297,7 +297,7 @@ const styles = StyleSheet.create({
     borderRadius: 28,
     marginRight: 20,
     width: 220,
-    shadowColor: '#FF6B35',
+    shadowColor: '#65695A',
     shadowOffset: { width: 0, height: 12 },
     shadowOpacity: 0.15,
     shadowRadius: 30,
@@ -308,7 +308,7 @@ const styles = StyleSheet.create({
   featuredCard: {
     width: 220,
     borderWidth: 2,
-    borderColor: '#FF6B35',
+    borderColor: '#65695A',
   },
   imageContainer: {
     position: 'relative',
@@ -324,7 +324,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 12,
     left: 12,
-    backgroundColor: '#FF6B35',
+    backgroundColor: '#65695A',
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 12,
@@ -360,7 +360,7 @@ const styles = StyleSheet.create({
   price: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#FF6B35',
+    color: '#65695A',
     marginRight: 8,
   },
   originalPrice: {
@@ -381,7 +381,7 @@ const styles = StyleSheet.create({
   },
   condition: {
     fontSize: 12,
-    color: '#FF6B35',
+    color: '#65695A',
     fontWeight: '500',
   },
   seller: {
@@ -422,7 +422,7 @@ const styles = StyleSheet.create({
   statNumber: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#FF6B35',
+    color: '#65695A',
   },
   statLabel: {
     fontSize: 12,
