@@ -20,7 +20,7 @@ export default function LandingScreen() {
       
       {/* App Title */}
       <View style={styles.titleContainer}>
-        <Text style={[styles.appName, Platform.OS === 'web' && { fontFamily: 'Pacifico, cursive' }]}>
+        <Text style={styles.appName}>
           Thribble
         </Text>
       </View>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     marginTop: 80,
   },
   appName: {
-    fontFamily: Platform.OS === 'ios' ? 'Snell Roundhand' : 'cursive',
+    fontFamily: 'Pacifico_400Regular',
     fontSize: 48,
     color: '#FFFFFF',
     fontWeight: 'bold',

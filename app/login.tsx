@@ -55,8 +55,8 @@ export default function LoginScreen() {
         </TouchableOpacity>
 
         <View style={styles.content}>
-          <Text style={[styles.appName, Platform.OS === 'web' && { fontFamily: 'Pacifico, cursive' }]}>Thribble</Text>
-          <Text style={[styles.title, Platform.OS === 'web' && { fontFamily: 'Pacifico, cursive' }]}>Welcome Back</Text>
+          <Text style={styles.appName}>Thribble</Text>
+          <Text style={styles.title}>Welcome Back</Text>
           <Text style={styles.subtitle}>Sign in to your account</Text>
 
           <View style={styles.inputContainer}>
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     textShadowColor: 'rgba(0, 0, 0, 0.5)',
     textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 8,
-    fontFamily: Platform.OS === 'ios' ? 'Snell Roundhand' : 'cursive',
+    fontFamily: 'Pacifico_400Regular',
   },
   title: {
     fontSize: 28,
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     textAlign: 'center',
     marginBottom: 10,
-    fontFamily: Platform.OS === 'ios' ? 'Snell Roundhand' : 'cursive',
+    fontFamily: 'Pacifico_400Regular',
     textShadowColor: 'rgba(0, 0, 0, 0.3)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 4,

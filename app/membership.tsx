@@ -178,7 +178,7 @@ export default function MembershipScreen() {
         <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
           <ArrowLeft size={24} color="#FFFFFF" />
         </TouchableOpacity>
-        <Text style={[styles.title, Platform.OS === 'web' && { fontFamily: 'Pacifico, cursive' }]}>{displayedTitle}</Text>
+        <Text style={styles.title}>{displayedTitle}</Text>
         <View style={styles.headerRight} />
       </View>
 
@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FFFFFF',
     marginLeft: 15,
-    fontFamily: Platform.OS === 'ios' ? 'Snell Roundhand' : 'cursive',
+    fontFamily: 'Pacifico_400Regular',
     letterSpacing: 1,
     textShadowColor: 'rgba(0, 0, 0, 0.5)',
     textShadowOffset: { width: 2, height: 2 },

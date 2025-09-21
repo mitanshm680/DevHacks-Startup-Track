@@ -147,12 +147,7 @@ export default function MessagesScreen() {
 
       {/* Header */}
       <View style={styles.header}>
-        <Text
-          style={[
-            styles.title,
-            Platform.OS === 'web' && { fontFamily: 'Pacifico, cursive' },
-          ]}
-        >
+        <Text style={styles.title}>
           {displayedTitle}
         </Text>
 
@@ -205,7 +200,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FFFFFF',
     marginBottom: 20,
-    fontFamily: Platform.OS === 'ios' ? 'Snell Roundhand' : 'cursive',
+    fontFamily: 'Pacifico_400Regular',
     letterSpacing: 1,
     textShadowColor: 'rgba(0, 0, 0, 0.5)',
     textShadowOffset: { width: 2, height: 2 },

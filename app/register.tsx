@@ -81,7 +81,7 @@ export default function RegisterScreen() {
 
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.content}>
-          <Text style={[styles.title, Platform.OS === 'web' && { fontFamily: 'Pacifico, cursive' }]}>Join ASU Marketplace</Text>
+          <Text style={styles.title}>Join ASU Marketplace</Text>
           <Text style={styles.subtitle}>Create your account to start trading</Text>
 
           <View style={styles.inputContainer}>
@@ -229,7 +229,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     textAlign: 'center',
     marginBottom: 10,
-    fontFamily: Platform.OS === 'ios' ? 'Snell Roundhand' : 'cursive',
+    fontFamily: 'Pacifico_400Regular',
     textShadowColor: 'rgba(0, 0, 0, 0.5)',
     textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 8,

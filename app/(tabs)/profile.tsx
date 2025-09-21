@@ -117,7 +117,7 @@ export default function ProfileScreen() {
       
       {/* Header */}
       <View style={styles.header}>
-        <Text style={[styles.title, Platform.OS === 'web' && { fontFamily: 'Pacifico, cursive' }]}>{displayedTitle}</Text>
+        <Text style={styles.title}>{displayedTitle}</Text>
         <TouchableOpacity style={styles.settingsButton}>
           <Settings size={24} color="#FFFFFF" />
         </TouchableOpacity>
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: 'bold',
     color: '#FFFFFF',
-    fontFamily: Platform.OS === 'ios' ? 'Snell Roundhand' : 'cursive',
+    fontFamily: 'Pacifico_400Regular',
     letterSpacing: 1,
     textShadowColor: 'rgba(0, 0, 0, 0.5)',
     textShadowOffset: { width: 2, height: 2 },

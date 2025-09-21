@@ -113,7 +113,7 @@ export default function SellScreen() {
       
       {/* Header */}
       <View style={styles.header}>
-        <Text style={[styles.title, Platform.OS === 'web' && { fontFamily: 'Pacifico, cursive' }]}>{displayedTitle}</Text>
+        <Text style={styles.title}>{displayedTitle}</Text>
       </View>
 
       <ScrollView 
@@ -307,7 +307,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FFFFFF',
     marginBottom: 8,
-    fontFamily: Platform.OS === 'ios' ? 'Snell Roundhand' : 'cursive',
+    fontFamily: 'Pacifico_400Regular',
     letterSpacing: 1,
     textShadowColor: 'rgba(0, 0, 0, 0.5)',
     textShadowOffset: { width: 2, height: 2 },

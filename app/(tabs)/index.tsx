@@ -144,7 +144,7 @@ export default function HomeScreen() {
       
       {/* Header */}
       <View style={styles.header}>
-        <Text style={[styles.appName, Platform.OS === 'web' && { fontFamily: 'Pacifico, cursive' }]}>{displayedTitle}</Text>
+        <Text style={styles.appName}>{displayedTitle}</Text>
         <View style={styles.searchContainer}>
           <Search size={20} color="rgba(0, 0, 0, 0.6)" style={styles.searchIcon} />
           <TextInput
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     textAlign: 'center',
     marginBottom: 20,
-    fontFamily: Platform.OS === 'ios' ? 'Snell Roundhand' : 'cursive',
+    fontFamily: 'Pacifico_400Regular',
     letterSpacing: 1,
     textShadowColor: 'rgba(0, 0, 0, 0.5)',
     textShadowOffset: { width: 2, height: 2 },
@@ -420,7 +420,7 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   promoBanner: {
-    backgroundColor: '#9CAF88',
+    backgroundColor: '#000000',
     borderRadius: 24,
     marginHorizontal: 20,
     marginTop: 20,
@@ -429,7 +429,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    shadowColor: '#9CAF88',
+    shadowColor: '#000000',
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.3,
     shadowRadius: 20,
