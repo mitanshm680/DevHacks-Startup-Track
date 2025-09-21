@@ -48,15 +48,18 @@ export default function LandingScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
     alignItems: 'center',
     paddingTop: 60,
     paddingBottom: 60,
     paddingHorizontal: 20,
   },
   titleContainer: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: [{ translateX: -65 }, { translateY: -50 }, { rotate: '-15deg' }],
     alignItems: 'center',
-    marginTop: 80,
   },
   appName: {
     fontFamily: 'Pacifico_400Regular',

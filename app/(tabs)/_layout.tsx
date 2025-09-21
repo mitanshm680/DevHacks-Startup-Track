@@ -10,8 +10,8 @@ export default function TabLayout() {
         tabBarStyle: {
           position: 'absolute',
           bottom: 20,
-          left: '5%',
-          right: '5%',
+          left: '15%',
+          right: '15%',
           backgroundColor: '#000000',
           borderRadius: 20,
           height: 70,
@@ -57,7 +57,7 @@ export default function TabLayout() {
           tabBarIcon: ({ size, color, focused }) => (
             <View
               style={{
-                backgroundColor: '#000000',
+                backgroundColor: focused ? '#6ecded' : '#000000',
                 borderRadius: 25,
                 borderWidth: 3,
                 borderColor: '#FFFFFF',
@@ -65,9 +65,11 @@ export default function TabLayout() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 marginTop: -10,
+                width: 50,
+                height: 50,
               }}
             >
-              <FontAwesome name="plus" size={28} color="#FFFFFF" />
+              <FontAwesome name="plus" size={24} color="#FFFFFF" />
             </View>
           ),
         }}
