@@ -58,7 +58,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: '50%',
     left: '50%',
-    transform: [{ translateX: -65 }, { translateY: -50 }, { rotate: '-15deg' }],
+    transform: [
+      { translateX: -65 }, 
+      { translateY: -50 }, 
+      { rotate: '-15deg' }
+    ],
     alignItems: 'center',
   },
   appName: {
