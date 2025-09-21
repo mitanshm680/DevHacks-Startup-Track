@@ -126,11 +126,11 @@ export default function SellScreen() {
           <Text style={styles.sectionTitle}>Photos</Text>
           <View style={styles.photoContainer}>
             <TouchableOpacity style={styles.photoButton}>
-              <Camera size={30} color="#65695A" />
+              <Camera size={30} color="#000000" />
               <Text style={styles.photoButtonText}>Take Photo</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.photoButton}>
-              <ImageIcon size={30} color="#65695A" />
+              <ImageIcon size={30} color="#000000" />
               <Text style={styles.photoButtonText}>From Gallery</Text>
             </TouchableOpacity>
           </View>
@@ -263,7 +263,7 @@ export default function SellScreen() {
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
             <View style={styles.modalHeader}>
-              <Sparkles size={24} color="#65695A" />
+              <Sparkles size={24} color="#000000" />
               <Text style={styles.modalTitle}>AI Price Suggestion</Text>
             </View>
             
@@ -378,8 +378,8 @@ const styles = StyleSheet.create({
     borderColor: '#E0E0E0',
   },
   categoryButtonActive: {
-    backgroundColor: '#65695A',
-    borderColor: '#65695A',
+    backgroundColor: '#000000',
+    borderColor: '#000000',
   },
   categoryButtonText: {
     color: '#666666',
@@ -398,7 +398,7 @@ const styles = StyleSheet.create({
   aiButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#65695A',
+    backgroundColor: '#000000',
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 20,
@@ -427,7 +427,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   submitButton: {
-    backgroundColor: '#65695A',
+    backgroundColor: '#000000',
     borderRadius: 12,
     paddingVertical: 16,
     marginTop: 30,
@@ -463,7 +463,7 @@ const styles = StyleSheet.create({
   modalTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#65695A',
+    color: '#000000',
     marginLeft: 10,
   },
   modalDescription: {
@@ -475,14 +475,14 @@ const styles = StyleSheet.create({
   suggestedPrice: {
     fontSize: 48,
     fontWeight: 'bold',
-    color: '#65695A',
+    color: '#000000',
     marginBottom: 30,
   },
   modalButtons: {
     width: '100%',
   },
   modalButton: {
-    backgroundColor: '#65695A',
+    backgroundColor: '#000000',
     borderRadius: 12,
     paddingVertical: 14,
     marginBottom: 10,
@@ -490,7 +490,7 @@ const styles = StyleSheet.create({
   modalButtonSecondary: {
     backgroundColor: 'transparent',
     borderWidth: 1,
-    borderColor: '#65695A',
+    borderColor: '#000000',
   },
   modalButtonText: {
     color: '#FFFFFF',
@@ -499,6 +499,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   modalButtonTextSecondary: {
-    color: '#65695A',
+    color: '#000000',
   },
 });

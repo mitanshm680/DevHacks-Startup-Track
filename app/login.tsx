@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   forgotText: {
-    color: '#65695A',
+    color: '#000000',
     fontSize: 16,
     textAlign: 'center',
     fontWeight: '500',
@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   registerBold: {
-    color: '#65695A',
+    color: '#000000',
     fontWeight: '600',
   },
 });

@@ -341,7 +341,7 @@ const styles = StyleSheet.create({
     padding: 25,
     marginBottom: 20,
     elevation: 8,
-    shadowColor: '#65695A',
+    shadowColor: '#000000',
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.12,
     shadowRadius: 20,
@@ -353,7 +353,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFEF0',
   },
   selectedPlan: {
-    borderColor: '#65695A',
+    borderColor: '#000000',
   },
   planHeader: {
     flexDirection: 'row',
@@ -383,7 +383,7 @@ const styles = StyleSheet.create({
   currentBadgeText: {
     fontSize: 10,
     fontWeight: 'bold',
-    color: '#65695A',
+    color: '#000000',
   },
   priceContainer: {
     flexDirection: 'row',
@@ -393,7 +393,7 @@ const styles = StyleSheet.create({
   price: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: '#65695A',
+    color: '#000000',
   },
   period: {
     fontSize: 16,
