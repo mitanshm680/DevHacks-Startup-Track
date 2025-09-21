@@ -7,9 +7,11 @@ import {
   TouchableOpacity,
   FlatList,
   Image,
+  Platform,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Edit3, Trash2, Eye } from 'lucide-react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const myListings = [
   { 
@@ -85,7 +87,7 @@ export default function MyListingsScreen() {
           }
         }, 60);
       }
-    }, 100);
+    }, 120);
 
     return () => clearInterval(titleTimer);
   }, []);
@@ -133,12 +135,15 @@ export default function MyListingsScreen() {
   );
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="dark" backgroundColor="#FFFFFF" />
+    <LinearGradient
+      colors={['#0d1335', '#6ecded']}
+      style={styles.container}
+    >
+      <StatusBar style="light" />
       
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>{displayedTitle}</Text>
+        <Text style={[styles.title, Platform.OS === 'web' && { fontFamily: 'Pacifico, cursive' }]}>{displayedTitle}</Text>
         <Text style={styles.headerSubtitle}>{displayedSubtitle}</Text>
       </View>
 
@@ -175,31 +180,32 @@ export default function MyListingsScreen() {
         data={filteredListings}
         renderItem={renderListingItem}
         keyExtractor={(item) => item.id.toString()}
-        contentContainerStyle={styles.listingsContainer}
+        contentContainerStyle={[styles.listingsContainer, { paddingBottom: 120 }]}
         showsVerticalScrollIndicator={false}
       />
-    </View>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
   },
   header: {
-    backgroundColor: '#FFFFFF',
     paddingTop: 45,
     paddingBottom: 25,
     paddingHorizontal: 25,
   },
-  headerTitle: {
+  title: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: '#000000',
+    color: '#FFFFFF',
     marginBottom: 8,
-    fontFamily: 'Pacifico',
+    fontFamily: Platform.OS === 'ios' ? 'Snell Roundhand' : 'cursive',
     letterSpacing: 1,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 8,
   },
   headerSubtitle: {
     fontSize: 16,

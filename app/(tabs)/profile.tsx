@@ -6,8 +6,10 @@ import {
   ScrollView,
   TouchableOpacity,
   Alert,
+  Platform,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { LinearGradient } from 'expo-linear-gradient';
 import { 
   User, 
   Settings, 
@@ -107,18 +109,25 @@ export default function ProfileScreen() {
   );
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="dark" backgroundColor="#FFFFFF" />
+    <LinearGradient
+      colors={['#0d1335', '#6ecded']}
+      style={styles.container}
+    >
+      <StatusBar style="light" />
       
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>{displayedTitle}</Text>
+        <Text style={[styles.title, Platform.OS === 'web' && { fontFamily: 'Pacifico, cursive' }]}>{displayedTitle}</Text>
         <TouchableOpacity style={styles.settingsButton}>
-          <Settings size={24} color="#000000" />
+          <Settings size={24} color="#FFFFFF" />
         </TouchableOpacity>
       </View>
 
-      <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
+      <ScrollView 
+        style={styles.content} 
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 120 }}
+      >
         <ProfileCard />
 
         <MenuSection title="Rewards & Membership">
@@ -184,17 +193,15 @@ export default function ProfileScreen() {
           <Text style={styles.copyright}>Made with ❤️ for Sun Devils</Text>
         </View>
       </ScrollView>
-    </View>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
   },
   header: {
-    backgroundColor: '#FFFFFF',
     paddingTop: 45,
     paddingBottom: 25,
     paddingHorizontal: 25,
@@ -202,12 +209,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  headerTitle: {
+  title: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: '#000000',
-    fontFamily: 'Pacifico',
+    color: '#FFFFFF',
+    fontFamily: Platform.OS === 'ios' ? 'Snell Roundhand' : 'cursive',
     letterSpacing: 1,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 8,
   },
   settingsButton: {
     padding: 5,

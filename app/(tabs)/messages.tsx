@@ -6,9 +6,11 @@ import {
   FlatList,
   TouchableOpacity,
   TextInput,
+  Platform,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Search, MoveVertical as MoreVertical } from 'lucide-react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 
 const messages = [
@@ -72,37 +74,26 @@ const messages = [
 export default function MessagesScreen() {
   const [searchQuery, setSearchQuery] = useState('');
   const [displayedTitle, setDisplayedTitle] = useState('');
-  const [displayedSubtitle, setDisplayedSubtitle] = useState('');
-  
+
   const fullTitle = 'Messages';
-  const fullSubtitle = 'Connect with buyers and sellers';
 
   useEffect(() => {
     let titleIndex = 0;
-    let subtitleIndex = 0;
-    
+
     const titleTimer = setInterval(() => {
       if (titleIndex < fullTitle.length) {
         setDisplayedTitle(fullTitle.slice(0, titleIndex + 1));
         titleIndex++;
       } else {
         clearInterval(titleTimer);
-        const subtitleTimer = setInterval(() => {
-          if (subtitleIndex < fullSubtitle.length) {
-            setDisplayedSubtitle(fullSubtitle.slice(0, subtitleIndex + 1));
-            subtitleIndex++;
-          } else {
-            clearInterval(subtitleTimer);
-          }
-        }, 60);
       }
-    }, 100);
+    }, 120);
 
     return () => clearInterval(titleTimer);
   }, []);
 
   const renderMessageItem = ({ item }: { item: any }) => (
-    <TouchableOpacity 
+    <TouchableOpacity
       style={styles.messageCard}
       onPress={() => console.log('Navigate to chat:', item.id)}
     >
@@ -114,7 +105,7 @@ export default function MessagesScreen() {
           </View>
         )}
       </View>
-      
+
       <View style={styles.messageContent}>
         <View style={styles.messageHeader}>
           <View style={styles.userInfo}>
@@ -128,16 +119,16 @@ export default function MessagesScreen() {
             </TouchableOpacity>
           </View>
         </View>
-        
+
         <View style={styles.itemInfo}>
           <Text style={styles.itemName}>{item.item}</Text>
           <Text style={styles.itemPrice}>{item.price}</Text>
         </View>
-        
-        <Text 
+
+        <Text
           style={[
             styles.lastMessage,
-            item.unread > 0 && styles.unreadMessage
+            item.unread > 0 && styles.unreadMessage,
           ]}
           numberOfLines={1}
         >
@@ -148,14 +139,23 @@ export default function MessagesScreen() {
   );
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="dark" backgroundColor="#FFFFFF" />
-      
+    <LinearGradient
+      colors={['#0d1335', '#6ecded']}
+      style={styles.container}
+    >
+      <StatusBar style="light" />
+
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>{displayedTitle}</Text>
-        <Text style={styles.headerSubtitle}>{displayedSubtitle}</Text>
-        
+        <Text
+          style={[
+            styles.title,
+            Platform.OS === 'web' && { fontFamily: 'Pacifico, cursive' },
+          ]}
+        >
+          {displayedTitle}
+        </Text>
+
         <View style={styles.searchContainer}>
           <Search size={20} color="#666666" style={styles.searchIcon} />
           <TextInput
@@ -174,7 +174,7 @@ export default function MessagesScreen() {
         keyExtractor={(item) => item.id.toString()}
         style={styles.messagesList}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.messagesContent}
+        contentContainerStyle={[styles.messagesContent, { paddingBottom: 120 }]}
       />
 
       {/* Empty State */}
@@ -187,28 +187,29 @@ export default function MessagesScreen() {
           </Text>
         </View>
       )}
-    </View>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
   },
   header: {
-    backgroundColor: '#FFFFFF',
     paddingTop: 45,
     paddingBottom: 25,
     paddingHorizontal: 25,
   },
-  headerTitle: {
+  title: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: '#000000',
-    marginBottom: 8,
-    fontFamily: 'Pacifico',
+    color: '#FFFFFF',
+    marginBottom: 20,
+    fontFamily: Platform.OS === 'ios' ? 'Snell Roundhand' : 'cursive',
     letterSpacing: 1,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 8,
   },
   headerSubtitle: {
     fontSize: 16,

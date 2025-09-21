@@ -8,9 +8,11 @@ import {
   FlatList,
   TextInput,
   Image,
+  Platform,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Search, Heart } from 'lucide-react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const topListings = [
   { 
@@ -75,14 +77,11 @@ const featuredItems = [
 export default function HomeScreen() {
   const [searchQuery, setSearchQuery] = useState('');
   const [displayedTitle, setDisplayedTitle] = useState('');
-  const [displayedSubtitle, setDisplayedSubtitle] = useState('');
   
   const fullTitle = 'Thribble';
-  const fullSubtitle = 'ASU Marketplace';
 
   useEffect(() => {
     let titleIndex = 0;
-    let subtitleIndex = 0;
     
     const titleTimer = setInterval(() => {
       if (titleIndex < fullTitle.length) {
@@ -90,15 +89,6 @@ export default function HomeScreen() {
         titleIndex++;
       } else {
         clearInterval(titleTimer);
-        // Start subtitle animation after title is done
-        const subtitleTimer = setInterval(() => {
-          if (subtitleIndex < fullSubtitle.length) {
-            setDisplayedSubtitle(fullSubtitle.slice(0, subtitleIndex + 1));
-            subtitleIndex++;
-          } else {
-            clearInterval(subtitleTimer);
-          }
-        }, 80);
       }
     }, 120);
 
@@ -146,13 +136,15 @@ export default function HomeScreen() {
   );
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="dark" backgroundColor="#FFFFFF" />
+    <LinearGradient
+      colors={['#0d1335', '#6ecded']}
+      style={styles.container}
+    >
+      <StatusBar style="light" />
       
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.appName}>{displayedTitle}</Text>
-        <Text style={styles.headerTitle}>{displayedSubtitle}</Text>
+        <Text style={[styles.appName, Platform.OS === 'web' && { fontFamily: 'Pacifico, cursive' }]}>{displayedTitle}</Text>
         <View style={styles.searchContainer}>
           <Search size={20} color="rgba(0, 0, 0, 0.6)" style={styles.searchIcon} />
           <TextInput
@@ -165,7 +157,11 @@ export default function HomeScreen() {
         </View>
       </View>
 
-      <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
+      <ScrollView 
+        style={styles.content} 
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 120 }}
+      >
         {/* Promotional Banner */}
         <View style={styles.promoBanner}>
           <View style={styles.promoContent}>
@@ -205,7 +201,6 @@ export default function HomeScreen() {
           />
         </View>
 
-
         {/* Campus Stats */}
         <View style={styles.statsSection}>
           <Text style={styles.sectionTitle}>Campus Activity</Text>
@@ -225,17 +220,15 @@ export default function HomeScreen() {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
   },
   header: {
-    backgroundColor: '#FFFFFF',
     paddingTop: 45,
     paddingBottom: 25,
     paddingHorizontal: 25,
@@ -243,25 +236,19 @@ const styles = StyleSheet.create({
   appName: {
     fontSize: 36,
     fontWeight: 'bold',
-    color: '#000000',
-    textAlign: 'center',
-    marginBottom: 8,
-    fontFamily: 'Pacifico',
-    letterSpacing: 1,
-  },
-  headerTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#666666',
+    color: '#FFFFFF',
     textAlign: 'center',
     marginBottom: 20,
-    fontFamily: 'Pacifico',
-    letterSpacing: 0.5,
+    fontFamily: Platform.OS === 'ios' ? 'Snell Roundhand' : 'cursive',
+    letterSpacing: 1,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 8,
   },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
     borderRadius: 25,
     paddingHorizontal: 20,
     paddingVertical: 15,
@@ -285,9 +272,12 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 24,
     fontWeight: '700',
-    color: '#000000',
+    color: '#FFFFFF',
     marginBottom: 16,
     letterSpacing: -0.5,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 4,
   },
   horizontalList: {
     paddingRight: 20,

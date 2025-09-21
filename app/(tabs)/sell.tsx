@@ -8,9 +8,11 @@ import {
   TextInput,
   Alert,
   Modal,
+  Platform,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Camera, ImageIcon, Sparkles, DollarSign } from 'lucide-react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const categories = [
   'Textbooks', 'Electronics', 'Furniture', 'Clothing', 'Appliances', 'Sports', 'Other'
@@ -103,16 +105,22 @@ export default function SellScreen() {
   };
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="dark" backgroundColor="#FFFFFF" />
+    <LinearGradient
+      colors={['#0d1335', '#6ecded']}
+      style={styles.container}
+    >
+      <StatusBar style="light" />
       
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>{displayedTitle}</Text>
-        <Text style={styles.headerSubtitle}>{displayedSubtitle}</Text>
+        <Text style={[styles.title, Platform.OS === 'web' && { fontFamily: 'Pacifico, cursive' }]}>{displayedTitle}</Text>
       </View>
 
-      <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
+      <ScrollView 
+        style={styles.content} 
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 120 }}
+      >
         {/* Photos Section */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Photos</Text>
@@ -281,35 +289,29 @@ export default function SellScreen() {
           </View>
         </View>
       </Modal>
-    </View>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
   },
   header: {
-    backgroundColor: '#FFFFFF',
     paddingTop: 45,
     paddingBottom: 25,
     paddingHorizontal: 25,
   },
-  headerTitle: {
+  title: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: '#000000',
+    color: '#FFFFFF',
     marginBottom: 8,
-    fontFamily: 'Pacifico',
+    fontFamily: Platform.OS === 'ios' ? 'Snell Roundhand' : 'cursive',
     letterSpacing: 1,
-  },
-  headerSubtitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#666666',
-    fontFamily: 'Pacifico',
-    letterSpacing: 0.5,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 8,
   },
   content: {
     flex: 1,
@@ -321,10 +323,12 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#333333',
+    color: '#FFFFFF',
     marginBottom: 15,
-    fontFamily: 'Pacifico',
     letterSpacing: 0.5,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 4,
   },
   photoContainer: {
     flexDirection: 'row',

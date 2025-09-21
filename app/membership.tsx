@@ -6,9 +6,11 @@ import {
   ScrollView,
   TouchableOpacity,
   Alert,
+  Platform,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { ArrowLeft, Check, Star, Zap, Crown } from 'lucide-react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 
 const membershipPlans = [
@@ -17,7 +19,7 @@ const membershipPlans = [
     name: 'Free',
     price: 0,
     period: '',
-    icon: '👤',
+    icon: '',
     color: '#666666',
     features: [
       'List up to 3 items per day',
@@ -32,7 +34,7 @@ const membershipPlans = [
     name: 'Basic',
     price: 5.99,
     period: '/month',
-    icon: '⭐',
+    icon: '',
     color: '#2196F3',
     features: [
       'List up to 30 items per day',
@@ -48,7 +50,7 @@ const membershipPlans = [
     name: 'Premium',
     price: 9.99,
     period: '/month',
-    icon: '👑',
+    icon: '',
     color: '#FFC627',
     features: [
       'Unlimited listings',
@@ -65,12 +67,12 @@ const membershipPlans = [
 export default function MembershipScreen() {
   const [selectedPlan, setSelectedPlan] = useState('premium');
   const [displayedTitle, setDisplayedTitle] = useState('');
-  
+
   const fullTitle = 'Membership Plans';
 
   useEffect(() => {
     let titleIndex = 0;
-    
+
     const titleTimer = setInterval(() => {
       if (titleIndex < fullTitle.length) {
         setDisplayedTitle(fullTitle.slice(0, titleIndex + 1));
@@ -105,7 +107,7 @@ export default function MembershipScreen() {
   };
 
   const PlanCard = ({ plan }: { plan: any }) => (
-    <TouchableOpacity 
+    <TouchableOpacity
       style={[
         styles.planCard,
         plan.current && styles.currentPlan,
@@ -124,7 +126,7 @@ export default function MembershipScreen() {
           )}
         </View>
       </View>
-      
+
       <View style={styles.priceContainer}>
         {plan.price > 0 ? (
           <>
@@ -135,7 +137,7 @@ export default function MembershipScreen() {
           <Text style={styles.freeText}>Free Forever</Text>
         )}
       </View>
-      
+
       <View style={styles.featuresContainer}>
         {plan.features.map((feature: string, index: number) => (
           <View key={index} style={styles.featureItem}>
@@ -144,9 +146,9 @@ export default function MembershipScreen() {
           </View>
         ))}
       </View>
-      
+
       {!plan.current && (
-        <TouchableOpacity 
+        <TouchableOpacity
           style={[styles.upgradeButton, { backgroundColor: plan.color }]}
           onPress={() => handleUpgrade(plan.id)}
         >
@@ -155,7 +157,7 @@ export default function MembershipScreen() {
           </Text>
         </TouchableOpacity>
       )}
-      
+
       {plan.current && (
         <View style={styles.currentButton}>
           <Text style={styles.currentButtonText}>Current Plan</Text>
@@ -165,15 +167,18 @@ export default function MembershipScreen() {
   );
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="dark" backgroundColor="#FFFFFF" />
-      
+    <LinearGradient
+      colors={['#0d1335', '#6ecded']}
+      style={styles.container}
+    >
+      <StatusBar style="light" />
+
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
-          <ArrowLeft size={24} color="#000000" />
+          <ArrowLeft size={24} color="#FFFFFF" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>{displayedTitle}</Text>
+        <Text style={[styles.title, Platform.OS === 'web' && { fontFamily: 'Pacifico, cursive' }]}>{displayedTitle}</Text>
         <View style={styles.headerRight} />
       </View>
 
@@ -211,21 +216,21 @@ export default function MembershipScreen() {
         {/* FAQ */}
         <View style={styles.faqSection}>
           <Text style={styles.faqTitle}>Frequently Asked Questions</Text>
-          
+
           <View style={styles.faqItem}>
             <Text style={styles.faqQuestion}>Can I cancel anytime?</Text>
             <Text style={styles.faqAnswer}>
               Yes, you can cancel your subscription at any time. Your benefits will continue until the end of your billing period.
             </Text>
           </View>
-          
+
           <View style={styles.faqItem}>
             <Text style={styles.faqQuestion}>What payment methods do you accept?</Text>
             <Text style={styles.faqAnswer}>
               We accept all major credit cards, debit cards, and PayPal for your convenience.
             </Text>
           </View>
-          
+
           <View style={styles.faqItem}>
             <Text style={styles.faqQuestion}>Do you offer student discounts?</Text>
             <Text style={styles.faqAnswer}>
@@ -236,17 +241,15 @@ export default function MembershipScreen() {
 
         <View style={styles.bottomPadding} />
       </ScrollView>
-    </View>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
   },
   header: {
-    backgroundColor: '#FFFFFF',
     paddingTop: 45,
     paddingBottom: 25,
     paddingHorizontal: 25,
@@ -255,14 +258,19 @@ const styles = StyleSheet.create({
   },
   backButton: {
     padding: 5,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    borderRadius: 20,
   },
-  headerTitle: {
+  title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#000000',
+    color: '#FFFFFF',
     marginLeft: 15,
-    fontFamily: 'Pacifico',
+    fontFamily: Platform.OS === 'ios' ? 'Snell Roundhand' : 'cursive',
     letterSpacing: 1,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 8,
   },
   headerRight: {
     width: 34,
@@ -278,8 +286,11 @@ const styles = StyleSheet.create({
   benefitsTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#65695A',
+    color: '#FFFFFF',
     marginBottom: 15,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 4,
   },
   benefitsContainer: {
     flexDirection: 'row',
@@ -318,8 +329,11 @@ const styles = StyleSheet.create({
   plansTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#65695A',
+    color: '#FFFFFF',
     marginBottom: 15,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 4,
   },
   planCard: {
     backgroundColor: '#FFFFFF',
@@ -432,8 +446,11 @@ const styles = StyleSheet.create({
   faqTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#65695A',
+    color: '#FFFFFF',
     marginBottom: 15,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 4,
   },
   faqItem: {
     backgroundColor: '#FFFFFF',

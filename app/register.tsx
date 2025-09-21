@@ -15,6 +15,7 @@ import {
 import { router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { ArrowLeft, ChevronDown } from 'lucide-react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const asuResidences = [
   'Barrett Hall',
@@ -64,19 +65,23 @@ export default function RegisterScreen() {
   };
 
   return (
-    <KeyboardAvoidingView 
-      style={styles.container} 
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    <LinearGradient
+      colors={['#0d1335', '#6ecded']}
+      style={styles.container}
     >
-      <StatusBar style="dark" />
+      <KeyboardAvoidingView 
+        style={styles.keyboardContainer} 
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      >
+        <StatusBar style="light" />
       
-      <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
-        <ArrowLeft size={24} color="#65695A" />
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+          <ArrowLeft size={24} color="#FFFFFF" />
+        </TouchableOpacity>
 
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.content}>
-          <Text style={styles.title}>Join ASU Marketplace</Text>
+          <Text style={[styles.title, Platform.OS === 'web' && { fontFamily: 'Pacifico, cursive' }]}>Join ASU Marketplace</Text>
           <Text style={styles.subtitle}>Create your account to start trading</Text>
 
           <View style={styles.inputContainer}>
@@ -189,20 +194,26 @@ export default function RegisterScreen() {
           </View>
         </View>
       </Modal>
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+  },
+  keyboardContainer: {
+    flex: 1,
   },
   backButton: {
     position: 'absolute',
     top: 60,
     left: 20,
     zIndex: 1,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    borderRadius: 20,
+    padding: 8,
   },
   scrollView: {
     flex: 1,
@@ -215,13 +226,17 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: '#8C1538',
+    color: '#FFFFFF',
     textAlign: 'center',
     marginBottom: 10,
+    fontFamily: Platform.OS === 'ios' ? 'Snell Roundhand' : 'cursive',
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 8,
   },
   subtitle: {
     fontSize: 16,
-    color: '#666666',
+    color: '#E0E0E0',
     textAlign: 'center',
     marginBottom: 40,
   },
